@@ -7,7 +7,8 @@
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+    @*<p><em>Loading...</em></p>*@
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
 }
 else
 {
@@ -39,6 +40,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(3000);
         forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     }
 

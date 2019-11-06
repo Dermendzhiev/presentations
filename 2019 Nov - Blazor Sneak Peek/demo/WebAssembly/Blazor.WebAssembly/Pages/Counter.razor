@@ -1,4 +1,5 @@
 ﻿@page "/counter"
+@inject Sotsera.Blazor.Toaster.IToaster Toaster
 
 <h1>Counter</h1>
 
@@ -12,5 +13,6 @@
     private void IncrementCount()
     {
         currentCount++;
+        Toaster.Success($"new value {currentCount}");
     }
 }
