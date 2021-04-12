@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# IDE0039: Use local function
+dotnet_diagnostic.IDE0039.severity = none
+
+# IDE0003: Remove qualification
+dotnet_diagnostic.IDE0003.severity = none
