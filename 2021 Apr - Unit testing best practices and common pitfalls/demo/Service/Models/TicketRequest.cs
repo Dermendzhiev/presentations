@@ -36,6 +36,11 @@
 
         public void SetCreatedAt(DateTime createdAt)
         {
+            if (createdAt == default)
+            {
+                throw new ArgumentException(nameof(createdAt));
+            }
+
             this.CreatedAt = createdAt;
         }
     }

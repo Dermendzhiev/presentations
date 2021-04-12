@@ -33,9 +33,7 @@ namespace Service
 
             this.logger.Information("Processing {@ticketRequest}", request);
 
-            //request.SetCreatedAt(DateTime.UtcNow);
-            request.SetCreatedAt(this.systemTime.UtcNow);
-
+            request.SetCreatedAt(DateTime.UtcNow); // this.systemTime.UtcNow
             int ticketRequestId = await this.ticketsRepository.CreateAsync(request);
 
             await this.emailService.SendEmailAsync($"<h1>New ticket created. ID: {ticketRequestId}", "support@gmail.com");
